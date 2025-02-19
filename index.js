@@ -28,17 +28,22 @@ async function add_to_cart(page) {
 }
 
 async function shipping(page){
-  await smart_click(page, "button[name='proceed']", 0);
+  //await smart_click(page, "[id='shoppingCart.actions.navCheckout']", 0);
+  
+  await smart_click(page, "button[name='proceed']")
   await smart_click(page, "[id='shoppingCart.actions.navCheckout']", 0);
   await smart_click(page, "[id='signIn.guestLogin.guestLogin']", 100);
   
   selector = "input[id='checkout.fulfillment.deliveryTab.delivery.deliveryLocation.address.postalCode']"
-  await page.waitForSelector(selector)
+  await page.waitForSelector(selector);
   await page.type(selector, "95150000")
+  await smart_click(page, "button[id='checkout.fulfillment.deliveryTab.delivery.deliveryLocation.address.calculate']", 1000);
+  await smart_click(page, "button[id='rs-checkout-continue-button-bottom']", 1000);
+
 }
 
 //helper function
-async function smart_click(page, selector){
+async function smart_click(page, selector, pause){
   await page.waitForSelector(selector)
   await page.evaluate((selector) => document.querySelector(selector).click(), selector)
   await new Promise(r => setTimeout(r, pause));
