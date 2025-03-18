@@ -39,6 +39,11 @@ async function shipping(page){
   await page.type(selector, "95150000")
   await smart_click(page, "button[id='checkout.fulfillment.deliveryTab.delivery.deliveryLocation.address.calculate']", 1000);
   await smart_click(page, "button[id='rs-checkout-continue-button-bottom']", 1000);
+  await smart_click(page, "input[id='checkout.shipping.addressSelector.newAddress.address.firstName']", 1000);
+  
+  selector = "input[id='checkout.fulfillment.deliveryTab.delivery.deliveryLocation.address.postalCode']"
+  await page.waitForSelector(selector);
+  await page.type(selector, "Caua Auler")
 
 }
 
