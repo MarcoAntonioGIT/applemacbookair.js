@@ -1,4 +1,6 @@
 "# relatorio-git-marco-antonio-e-joao-tavares" 
+//  OBS: Copiamos e colamos os comandos do terminal Git CMD, para facilitar a visualização; 
+    OBS 2: Utilizamos de um repositório já existente, com uma aplicação que automatiza o processo de compra de um macbook (apenas para testes, ele chega somente até o checkout)
 
 C:\Users\ultre\Documents\Automations\applemacbookair.js>git log
 commit 34d3640031c09eacf195376f9357f2b1dce979c0 (HEAD -> main, origin/main)
@@ -126,4 +128,3 @@ Your branch is up to date with 'origin/main'.
 
 // agora, executamos o comando "git checkout main", o arquivo README.md voltou ao repositório local.
 
-// OBS: Copiei e colei os comandos do terminal Git CMD, para facilitar a visualização 
